@@ -16,3 +16,7 @@ docker-compose down
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t thebinij/pdf-compressor:latest --push .
 
 ```
+
+### DockerHUB Link
+
+[Docker Hub Repository](https://hub.docker.com/r/thebinij/pdf-compressor)
