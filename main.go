@@ -26,6 +26,7 @@ func startServer() {
 	addr := ":8080"
 
 	// Listen and serve
+	log.Printf("Listening at port %s", addr)
 	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatalf("Error starting server: %v", err)
 	}
