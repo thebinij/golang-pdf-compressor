@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdf-compressor-deployment
+  namespace: compressor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdf-compressor
+  template:
+    metadata:
+      labels:
+        app: pdf-compressor
+    spec:
+      containers:
+        - name: pdf-compressor
+          image: thebinij/pdf-compressor:1.0.0
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "256m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
